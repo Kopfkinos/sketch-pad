@@ -1,6 +1,7 @@
 const container = document.querySelector("#container")
 const initialSize = 16
 
+// initialize initial 16x16 div blocks
 for (let i = 0; i < initialSize; i++) {
   const div = document.createElement("div")
   div.classList.add("row")
@@ -11,10 +12,27 @@ for (let i = 0; i < initialSize; i++) {
   container.appendChild(div)
 }
 
+function randomColor() {
+  let letters = "0123456789ABCDEF"
+  let color = "#"
+
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
+
+const colorSelector = document.querySelector("#colorSelector")
+let selectedColor = "black"
+
+colorSelector.addEventListener("input", () => {
+  selectedColor = colorSelector.value
+})
+
 container.addEventListener("mouseover", (e) => {
   let target = e.target
   if (target.tagName === "DIV") {
-    target.classList.add("filled-in")
+    target.style.backgroundColor = selectedColor
   }
 })
 
@@ -23,7 +41,7 @@ const resetBtn = document.querySelector(".reset")
 resetBtn.addEventListener("click", () => {
   const pixels = container.querySelectorAll("div")
   pixels.forEach((pixel) => {
-    pixel.classList.remove("filled-in")
+    pixel.style.backgroundColor = "white"
   })
 })
 

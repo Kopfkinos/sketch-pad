@@ -18,10 +18,14 @@ div {
   height: 500px;
 }
 
-.btn-container {
-  background-color: rgb(97, 97, 97);
+.color.btn-container {
+  background-color: rgb(255, 255, 255);
+  font-size: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 button {
