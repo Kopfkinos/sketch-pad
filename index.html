@@ -8,15 +8,22 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="size btn-container">
-      <button>Change Pad Pixel Density</button>
-    </div>
     <div class="color btn-container">
-      <label for="favcolor" class="btn-container">Select Pen Colour</label>
+      <label for="favcolor">Select Pen Colour</label>
       <input type="color" id="colorSelector" name="favcolor" value="#ff0000" />
     </div>
+    <div class="random-colors btn-container">
+      <span>Use Random Colours</span>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
     <section id="container"></section>
-    <div class="reset btn-container">
+    <div class="size">
+      <button>Change Pad Pixel Density</button>
+    </div>
+    <div class="reset">
       <button>Reset</button>
     </div>
   </body>

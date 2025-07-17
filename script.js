@@ -12,7 +12,7 @@ for (let i = 0; i < initialSize; i++) {
   container.appendChild(div)
 }
 
-function randomColor() {
+function generateRandomHexValue() {
   let letters = "0123456789ABCDEF"
   let color = "#"
 
@@ -24,15 +24,43 @@ function randomColor() {
 
 const colorSelector = document.querySelector("#colorSelector")
 let selectedColor = "black"
+let randomColorsActive = false
 
 colorSelector.addEventListener("input", () => {
   selectedColor = colorSelector.value
 })
 
+const randomColorsToggle = document.querySelector(".random-colors > label > input")
+randomColorsToggle.addEventListener("input", () => {
+  randomColorsActive = randomColorsToggle.checked
+  console.log(randomColorsActive)
+})
+
+// function opacityClosure(prevOpac) {
+//   return function changeOpacity() {
+//     const newOpac = (prevOpac += 0.1)
+//     return newOpac
+//   }
+// }
+
 container.addEventListener("mouseover", (e) => {
   let target = e.target
-  if (target.tagName === "DIV") {
+  if (randomColorsActive) {
+    if (!target.style.backgroundColor) {
+      target.style.backgroundColor = generateRandomHexValue()
+      let opacity = parseFloat(target.style.opacity) || parseInt(0)
+      opacity += 0.1
+      target.style.opacity = opacity.toString()
+    } else {
+      let opacity = parseFloat(target.style.opacity)
+      opacity += 0.1
+      target.style.opacity = opacity.toString()
+    }
+  } else {
     target.style.backgroundColor = selectedColor
+    let opacity = parseFloat(target.style.opacity) || parseInt(0)
+    opacity += 0.1
+    target.style.opacity = opacity.toString()
   }
 })
 
