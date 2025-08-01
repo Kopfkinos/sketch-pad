@@ -1,7 +1,7 @@
+✏️🗒
 Live version - https://kopfkinos.github.io/sketch-pad/
 
-This is a simple sketch pad project as part of the Odin projects foundations course. 
-
+This is a simple sketch pad project as part of the Odin project's foundations course. 
 It is a project allowing me to practice my Javascript and CSS skills. 
 
 The "sketchpad" in the center of the page can be drawn onto by hovering the mouse over it. 
