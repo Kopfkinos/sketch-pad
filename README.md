@@ -1,5 +1,5 @@
-✏️🗒
-Live version - https://kopfkinos.github.io/sketch-pad/
+# Sketchpad✏️🗒
+[Live version](https://kopfkinos.github.io/sketch-pad/)
 
 This is a simple sketch pad project as part of the Odin project's foundations course. 
 It is a project allowing me to practice my Javascript and CSS skills. 
